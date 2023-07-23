@@ -9,7 +9,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <link href="{{asset('coffee_break-web/web/css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
     <link href="{{asset('coffee_break-web/web/css/style.css')}}" rel='stylesheet' type='text/css' />
-    <script src="{{asset('coffee_break-web/web/js/jquery.min.js')}}"></script>
+    <script type=text/javascript src="{{asset('coffee_break-web/web/js/jquery.min.js')}}"></script>
     <!---- start-smoth-scrolling---->
     <script type="text/javascript" src="{{asset('coffee_break-web/web/js/move-top.js')}}"></script>
     <script type="text/javascript" src="{{asset('coffee_break-web/web/js/easing.js')}}"></script>
@@ -43,7 +43,91 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 @yield('content')
 
 <!--slide-->
-@include('partials.slide')
+{{--@include('partials.slide')--}}
+
+<!--slide-starts-->
+<div class="slide">
+    <div class="container">
+        <div class="fle-xsel">
+            <ul id="flexiselDemo3">
+                <li>
+                    <a href="#">
+                        <div class="banner-1">
+                            <img src="{{asset('coffee_break-web/web/images/s-1.jpg')}}" class="img-responsive" alt="123">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="banner-1">
+                            <img src="{{asset('coffee_break-web/web/images/s-2.jpg')}}" class="img-responsive" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="banner-1">
+                            <img src="{{asset('coffee_break-web/web/images/s-3.jpg')}}" class="img-responsive" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="banner-1">
+                            <img src="{{asset('coffee_break-web/web/images/s-4.jpg')}}" class="img-responsive" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="banner-1">
+                            <img src="{{asset('coffee_break-web/web/images/s-5.jpg')}}" class="img-responsive" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="banner-1">
+                            <img src="{{asset('coffee_break-web/web/images/s-6.jpg')}}" class="img-responsive" alt="">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <script type="text/javascript">
+                $(window).load(function() {
+
+                    $("#flexiselDemo3").flexisel({
+                        visibleItems: 5,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 3000,
+                        pauseOnHover: true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint:480,
+                                visibleItems: 2
+                            },
+                            landscape: {
+                                changePoint:640,
+                                visibleItems: 3
+                            },
+                            tablet: {
+                                changePoint:768,
+                                visibleItems: 3
+                            }
+                        }
+                    });
+
+                });
+            </script>
+            <script type="text/javascript" src="{{asset('coffee_break-web/js/jquery.flexisel.js')}}"></script>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!--slide-end-->
 
 <!--footer-->
 @include('partials.footer')
