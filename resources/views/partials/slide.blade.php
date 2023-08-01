@@ -47,9 +47,9 @@
                 </li>
             </ul>
 
+
             <script type="text/javascript">
                 $(window).load(function() {
-
                     $("#flexiselDemo3").flexisel({
                         visibleItems: 5,
                         animationSpeed: 1000,
@@ -75,7 +75,8 @@
 
                 });
             </script>
-            <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+
+            <script type="text/javascript" src="{{asset('coffee_break-web/web/js/jquery.flexisel.js')}}"></script>
             <div class="clearfix"> </div>
         </div>
     </div>
