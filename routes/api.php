@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DescriptionController;
 use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('post', PostController::class)->except(['edit','create']);
+Route::resource('about', AboutController::class)->except(['edit','create']);
+Route::resource('contact', ContactController::class)->except(['edit','create']);
+Route::resource('description', DescriptionController::class)->except(['edit','create']);
