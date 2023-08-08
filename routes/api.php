@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
+Route::group(['middleware'=>'auth:api'],function (){
+   Route::get('profile-details', [PassportAuthController::class, 'userInform']);
+});
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
