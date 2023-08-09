@@ -21,16 +21,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
-Route::group(['middleware'=>'auth:api'],function (){
-   Route::get('profile-details', [PassportAuthController::class, 'userInform']);
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('profile-details', [PassportAuthController::class, 'userInform']);
+    Route::post('logout', [PassportAuthController::class, 'logout']);
 });
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 
 });
 
-Route::resource('post', PostController::class)->except(['edit','create']);
-Route::resource('about', AboutController::class)->except(['edit','create']);
-Route::resource('contact', ContactController::class)->except(['edit','create']);
-Route::resource('description', DescriptionController::class)->except(['edit','create']);
+Route::resource('post', PostController::class)->except(['edit', 'create']);
+Route::resource('about', AboutController::class)->except(['edit', 'create']);
+Route::resource('contact', ContactController::class)->except(['edit', 'create']);
+Route::resource('description', DescriptionController::class)->except(['edit', 'create']);

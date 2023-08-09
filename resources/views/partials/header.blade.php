@@ -20,6 +20,7 @@
 {{--                    <li><a href="typo.html">Typo</a></li>--}}
                     <li><a href="{{route('contact.index')}}">Contact</a></li>
                 </ul>
+
             </div>
             <div class="header-right">
                 <div class="search-bar">
@@ -30,8 +31,6 @@
                     <li><a href="#"><span class="fb"> </span></a></li>
                     <li><a href="#"><span class="twit"> </span></a></li>
                     <li><a href="#"><span class="pin"> </span></a></li>
-{{--                    <li><a href="#"><span class="rss"> </span></a></li>--}}
-{{--                    <li><a href="#"><span class="drbl"> </span></a></li>--}}
                 </ul>
             </div>
             <div class="clearfix"></div>
