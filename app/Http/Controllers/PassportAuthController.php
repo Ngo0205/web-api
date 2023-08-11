@@ -14,6 +14,12 @@ class PassportAuthController extends Controller
     /**
      * @throws ValidationException
      */
+
+    public function index()
+    {
+        return view('auths.login');
+    }
+
     public function register(Request $request): \Illuminate\Http\JsonResponse
     {
         $this->validate($request, [

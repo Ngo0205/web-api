@@ -26,6 +26,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('logout', [PassportAuthController::class, 'logout']);
 });
 
+Route::get('/', [PassportAuthController::class,'index']);
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 
