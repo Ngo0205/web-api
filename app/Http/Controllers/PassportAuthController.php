@@ -17,9 +17,16 @@ class PassportAuthController extends Controller
 
     public function index()
     {
-        return view('auths.login');
+        if (auth()->check()){
+            return view('auths.login');
+        }
+        else return redirect()->route('post.index');
+
     }
 
+    /**
+     * @throws ValidationException
+     */
     public function register(Request $request): \Illuminate\Http\JsonResponse
     {
         $this->validate($request, [
@@ -56,11 +63,12 @@ class PassportAuthController extends Controller
                 400
             );
         }
-
+        $remember = $request->has('remember');
         if (auth()->attempt($data)) {
             $user = Auth::user();
             $token = $user->createToken('Myapp')->accessToken;
-            return response()->json(['token' => $token]);
+
+            return redirect()->route('post.index');
         } else {
             return response()->json(['error' => 'Unauthorised'], 400);
         }

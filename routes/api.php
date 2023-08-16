@@ -19,14 +19,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('login', [PassportAuthController::class,'index'])->name('api-login');
 Route::post('register', [PassportAuthController::class, 'register']);
-Route::post('login', [PassportAuthController::class, 'login']);
+Route::post('login', [PassportAuthController::class, 'login'])->name('user_login');
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('profile-details', [PassportAuthController::class, 'userInform']);
     Route::post('logout', [PassportAuthController::class, 'logout']);
 });
-
-Route::get('/', [PassportAuthController::class,'index']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

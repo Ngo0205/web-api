@@ -37,23 +37,22 @@
                                 <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur
                                     adipisicing.</p>
                             </div>
-                            <form action="#" method="">
+                            <form action="{{route('user_login')}}" method="post">
                                 @csrf
                                 <div class="form-group first">
-                                    <label for="username">Username</label>
-                                    <input type="text" class="form-control" id="username">
+                                    <label for="username">Email</label>
+                                    <input required type="email" class="form-control" name="email" id="email">
 
                                 </div>
                                 <div class="form-group last mb-4">
                                     <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password">
-
+                                    <input type="password" class="form-control" name="password" id="password">
                                 </div>
 
                                 <div class="d-flex mb-5 align-items-center">
                                     <label class="control control--checkbox mb-0"><span
                                             class="caption">Remember me</span>
-                                        <input type="checkbox" checked="checked"/>
+                                        <input type="checkbox" checked="checked" name="remember"/>
                                         <div class="control__indicator"></div>
                                     </label>
                                     <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
